@@ -1,0 +1,20 @@
+include::https://raw.githubusercontent.com/andrea-guarino-sonarsource/common-rspec/master/RSPEC-XXXX.adoc[]
+
+
+== Noncompliant Code Example
+
+----
+namespace NS1 {
+  int foo;
+  int bar;
+}
+
+using namespace NS1; // OK
+
+namespace NS2 {
+  int foo;
+  int somethingElse;
+}
+
+using namespace NS2; // Noncompliant as there might be an ambiguity between NS1::foo and NS2::foo
+----
